@@ -158,7 +158,7 @@ print( data_frame.tail() )
 
 <br/>
 
-**👉🏽  See [repo](https://github.com/dexplo/bar_chart_race). **
+👉🏽  See [repo](https://github.com/dexplo/bar_chart_race)
 
 <br/>
 
