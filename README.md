@@ -1,10 +1,10 @@
 # Create a Race Bar in Python
-
----
-
 Tutorial Prepared by: Joi Anderson ([@joicodes](https://github.com/joicodes)) 
 
+<br/>
+
 ### **Step 1: Curate a Data File 📊**
+<br/>
 
 **Finding an interesting data set:**
 
@@ -24,6 +24,8 @@ Here is a list of sources for interesting data sets to explore:
 
    For this workshop, we will be using:  [Hot 100 singles (1/1/2000 and 12/28/2019)](https://docs.google.com/spreadsheets/d/1w6qXo81agnHLPWsRSh3jOqe2LIZOw3fly7NNAySPrsw/copy)
 
+<br/>
+
 **Understanding Your Data:**
 
 Before starting your analysis on the data set, let's take the time to first understand the data we are working with. So let's take a look at the data: 
@@ -42,6 +44,8 @@ Observations:
     - `Song` - Name of the song
     - `Performer` - Name of the performer and features on the song.
 
+<br/>
+
 **Download Data** 
 
 Export the Google Sheets file as a CSV and move it to our repository:
@@ -54,7 +58,11 @@ Rename the file `hot100.csv` and add it to your repository.
 
 Here is how your data looks as a raw CSV file: [Preview](https://raw.githubusercontent.com/joicodes/Top-100-Racing-Bar-Chart/master/hot100.csv)
 
+<br/>
+
 ---
+
+<br/>
 
 ### **Step 2: Using Pandas 🐼**
 
