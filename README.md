@@ -12,7 +12,7 @@ A **data set** is a collection of data.
 
 Data sets are created in many different ways. Some are based off of human observations or surveys, like the U.S. Census. Others may be machine-generated, like satellite forecast data.
 
-The most common format for data sets is a spreadsheet or CSV.  For this workshop, let's aim to find a dataset that is formatted as a CSV. 
+The most common format for data sets is a spreadsheet or CSV. Let's aim to find a dataset that is formatted as a CSV. 
 
 Here is a list of sources for interesting data sets to explore:
 
@@ -30,7 +30,11 @@ Here is a list of sources for interesting data sets to explore:
 
 Before starting your analysis on the data set, let's take the time to first understand the data we are working with. So let's take a look at the data: 
 
+<br/>
+
 ![readme_assets/Untitled.png](readme_assets/Untitled.png)
+
+
 
 Observations:
 
@@ -56,7 +60,9 @@ File > Download > Comma Separated Values (.csv, current sheet)
 
 Rename the file `hot100.csv` and add it to your repository. 
 
-Here is how your data looks as a raw CSV file: [Preview](https://raw.githubusercontent.com/joicodes/Top-100-Racing-Bar-Chart/master/hot100.csv)
+
+**👀 Here is how your data looks as a raw CSV file: [Preview](https://raw.githubusercontent.com/joicodes/Top-100-Racing-Bar-Chart/master/hot100.csv)**
+
 
 <br/>
 
@@ -66,6 +72,8 @@ Here is how your data looks as a raw CSV file: [Preview](https://raw.githubuserc
 
 ### **Step 2: Using Pandas 🐼**
 
+<br/>
+
 **Meet Pandas (Python Data Analysis Library)**
 
 `pandas` is a Python library that give you a set of tool to do data analysis. 
@@ -73,7 +81,9 @@ If want to work with big data sets, then `pandas` is going to be your best frien
 
 ![readme_assets/Startimage.gif](readme_assets/Startimage.gif)
 
-                                                      Image from: [Python Awesome](https://pythonawesome.com/bokeh-plotting-backend-for-pandas-and-geopandas/)
+*Image from: [Python Awesome](https://pythonawesome.com/bokeh-plotting-backend-for-pandas-and-geopandas/)*
+
+<br/>
 
 To install `pandas`, in your Terminal write:
 
@@ -81,13 +91,19 @@ To install `pandas`, in your Terminal write:
 pip3 install pandas
 ```
 
+<br/>
+
 After it installs, we can import it into our `[main.py](http://main.py)` file:
 
 ```python
 import pandas as pd
 ```
 
+<br/>
+
 **Loading our data from CSV file** 
+
+<br/>
 
 Now that we've imported `pandas`, we are ready to read the CSV file into Python using `read_csv()` from `pandas`:
 
@@ -95,17 +111,25 @@ Now that we've imported `pandas`, we are ready to read the CSV file into Python 
 data_frame = pd.read_csv("hot100.csv")
 ```
 
+<br/>
+
 To see if it worked, we can see the first few rows of the data by adding the following to our code:
 
 ```python
 print( data_frame.head() ) 
 ```
 
+<br/>
+
 `head()` gives us a snap shot of our data, by displaying  the first few rows and columns of the data set. 
 
 You should an aggregated chart printed to the terminal like this: 
 
+<br/>
+
 ![readme_assets/Untitled%201.png](readme_assets/Untitled%201.png)
+
+
 
 We can also see the last rows of the data by using `tail()`
 
@@ -113,19 +137,30 @@ We can also see the last rows of the data by using `tail()`
 print( data_frame.tail() )
 ```
 
+<br/>
  
 
 ![readme_assets/Untitled%202.png](readme_assets/Untitled%202.png)
 
+
 ---
+
 
 ### **Step 3: Install Bar Chart Race 🏁**
 
+<br/>
+
 **Meet Bar Chart Race** 
+
+<br/>
 
 `bar_chart_race` is an open source Python library that can be used to create animated bar and line chart races in Python. It's is built on top of two popular Python data analytics library: `matplotlib` and `plotly`. This library simplifies creating racing graph animation!
 
-👉🏽  See [repo](https://github.com/dexplo/bar_chart_race).
+<br/>
+
+**👉🏽  See [repo](https://github.com/dexplo/bar_chart_race). **
+
+<br/>
 
 ![readme_assets/covid19_horiz.gif](readme_assets/covid19_horiz.gif)
 
@@ -135,17 +170,23 @@ To install `bar_chart_race`, in your Terminal write:
 pip3 install bar_chart_race
 ```
 
+<br/>
+
 After it installs, we can import it into our `[main.py](http://main.py)` file:
 
 ```python
 import bar_chart_race as bcr
 ```
 
+<br/>
+
 **Install Dependency**
 
 ```python
 brew install ffmpeg
 ```
+
+<br/>
 
 If you decide that you want to create a gif animation, install **Image Magick** and **Ghost Script**
 
@@ -154,11 +195,19 @@ brew install imagemagick
 brew install ghostscript
 ```
 
+
+
 ---
+
+<br/>
 
 ### **Step 4: Prepare Data for Bar Chart 🔧**
 
+<br/>
+
 **Transform data into 'wide' data** 
+
+<br/>
 
 In order to create a racing bar chart, our data set must be in '**wide**' form where:
 
@@ -166,13 +215,23 @@ In order to create a racing bar chart, our data set must be in '**wide**' form w
 - Each column holds the value for a particular category
 - The index contains the time component
 
+
+<br/>
+
+
 To transform our data set into **wide** form we would need:
 
 - The index would be the week — using `Week`
 - Each column has a name an artists who had a Top 100 hit — using `Performer`
 - Each row should represent the cumulative count of songs by that week.
 
+
+<br/>
+
+
 Here a rough sketch of how it would look :
+
+<br/>
 
 ![readme_assets/Untitled%203.png](readme_assets/Untitled%203.png)
 
@@ -182,21 +241,23 @@ We can transform  to be '**wide'** by creating a pivot table with `pandas`:
 wide_data = data_frame.pivot_table(index='Week', columns='Performer', aggfunc='count', fill_value=0).cumsum()
 ```
 
-👉🏽 Scroll right to see entire line of code
+<br/>
 
- 
 
-.
+
 
 Here is what `wide_data.head()` will print:
+<br/>
 
 ![readme_assets/Untitled%204.png](readme_assets/Untitled%204.png)
 
-If you want to see the full output, check it out [here](https://raw.githubusercontent.com/joicodes/Top-100-Racing-Bar-Chart/master/wide_data.csv).
+**If you want to see the full output, check it out [here](https://raw.githubusercontent.com/joicodes/Top-100-Racing-Bar-Chart/master/wide_data.csv).**
+
+<br/>
 
 **Remove header**
 
- ****
+<br/>
 
 The pivot table generated a header for us that is not useful to us.
 
@@ -206,6 +267,8 @@ We can remove this header by using `drop level()` :
 wide_data.columns = wide_data.columns.droplevel(0)
 ```
 
+<br/>
+
 **Remove duplicate columns**
 
 If you look at the results, there are some duplicated columns:
@@ -213,6 +276,8 @@ If you look at the results, there are some duplicated columns:
 ```python
 wide_data = wide_data.loc[:,~wide_data.columns.duplicated()] 
 ```
+
+<br/>
 
 **Create a subset**
 
@@ -222,9 +287,13 @@ Rather than deleting the columns we are currently not using, we can create a sub
 
 Let's choose **5 Performers** (i.e. 5 columns of data) to race and store them in a list:
 
+<br/>
+
 ```python
 columns = [ "Mariah Carey", "Michael Jackson", "Drake", "Rihanna", "Lady Gaga"]
 ```
+
+<br/>
 
 Using that list of column names, we can create a sub-dataset by doing the following:
 
@@ -232,11 +301,17 @@ Using that list of column names, we can create a sub-dataset by doing the follow
 sub_dataset = data_frame[columns]
 ```
 
+<br/>
+
 Let's print the first few rows of `sub_dataset` to what data it contains:
 
 ```python
 print(sub_dataset.head())
 ```
+
+<br/>
+
+
 
 Now that we have our data ready... let the games begin!
 
@@ -244,11 +319,15 @@ Now that we have our data ready... let the games begin!
 
 ### **Step 5: Create Your Animation 🏁**
 
+<br/>
+
 **Create .mp4 with Racing Bar Chart Animation**
 
 ```jsx
 bcr.bar_chart_race(sub_dataset, filename='hot100.mp4')
 ```
+
+<br/>
 
 **Check out your video** 
 
@@ -260,4 +339,7 @@ Here is mine (watch in 5x speed):
 
 [https://youtu.be/mgFmybMTnXs](https://youtu.be/mgFmybMTnXs)
 
-Check the [docs](https://www.dexplo.org/bar_chart_race/) for Bar Chart Race to customize your animation!
+
+
+
+**Check the [docs](https://www.dexplo.org/bar_chart_race/) for Bar Chart Race to customize your animation!**
