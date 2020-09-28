@@ -1,5 +1,5 @@
 # Create a Race Bar in Python
-Tutorial Prepared by: Joi Anderson ([@joicodes](https://github.com/joicodes)) 
+Tutorial Prepared by: Joi Anderson ([@joicodes](https://github.com/joicodes))   •   [View on Notion](https://www.notion.so/Create-a-Race-Bar-in-Python-6ad8b31aeb2849ebb5fcb27e0bdb1831)
 
 <br/>
 
