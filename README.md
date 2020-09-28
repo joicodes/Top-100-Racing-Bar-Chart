@@ -22,7 +22,7 @@ Here is a list of sources for interesting data sets to explore:
 - [/r/datasets](https://www.reddit.com/r/datasets/top/?sort=top&t=all) (on Reddit)
 - [DataSF](https://datasf.org/opendata/)
 
-   For this workshop, we will be using:  [Hot 100 singles (1/1/2000 and 12/28/2019)](https://docs.google.com/spreadsheets/d/1w6qXo81agnHLPWsRSh3jOqe2LIZOw3fly7NNAySPrsw/copy)
+For this workshop, we will be using:  [Hot 100 singles (1/1/2000 and 12/28/2019)](https://docs.google.com/spreadsheets/d/1Wcu85wPRwyZN4I41gBFCbweCjxcvNs7xPlZ9rkddzQQ/edit?usp=sharing/copy)
 
 <br/>
 
